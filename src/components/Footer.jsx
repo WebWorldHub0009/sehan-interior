@@ -170,26 +170,42 @@ export default function Footer() {
         </div>
 
         {/* Contact Info */}
-        <div>
-          <h4 className="font-cursive2 text-4xl mb-4 text-[#D4AF37]">
-            Contact Info
-          </h4>
-          <address className="not-italic leading-relaxed mb-4 font-body">
-            Plot No. 344A, Ground Floor, Block A  
-            PAC Road, Near Sn Mini Mart,  
-            Ram Puram, Shyam Nagar,  
-            Kanpur, Uttar Pradesh - 208015, India
-          </address>
+       {/* Contact Info */}
+<div>
+  <h4 className="font-cursive2 text-4xl mb-4 text-[#D4AF37]">
+    Contact Info
+  </h4>
+  <address className="not-italic leading-relaxed mb-4 font-body">
+    Plot No. 344A, Ground Floor, Block A  
+    PAC Road, Near Sn Mini Mart,  
+    Ram Puram, Shyam Nagar,  
+    Kanpur, Uttar Pradesh - 208015, India
+  </address>
 
-          <p className="text-sm mb-2">
-            <FaPhoneAlt className="inline text-[#D4AF37] mr-1" />
-            <a href="tel:+918299652635">+91 82996 52635</a>
-          </p>
+  {/* Phone */}
+  <p className="text-sm mb-2 flex items-center gap-2">
+    <FaPhoneAlt className="text-[#D4AF37]" />
+    <a href="tel:+918299652635">+91 82996 52635</a>
+  </p>
 
-          <div className="mb-4 flex justify-center items-center relative right-6">
-            <Translator />
-          </div>
-        </div>
+  {/* ✅ NCS IDs */}
+  <p className="text-sm mb-2 flex items-center gap-2">
+    <FaInfoCircle className="text-[#D4AF37]" />
+    NCS ID: <span className="ml-1">E20H84-1952329189216</span>
+  </p>
+  <p className="text-sm mb-4 flex items-center gap-2">
+    <FaInfoCircle className="text-[#D4AF37]" />
+   UDYAM-UP-43-0156845
+  </p>
+
+  <div className="mb-4 flex justify-center items-center relative right-6">
+    <div>
+
+    <Translator />
+    </div>
+  </div>
+</div>
+
       </div>
 
       {/* Bottom Section */}

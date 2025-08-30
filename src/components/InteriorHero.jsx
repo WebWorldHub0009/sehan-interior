@@ -85,93 +85,86 @@ const InteriorHero = () => {
       </div>
     </section>
 
-     <section className="flex h-[85vh] w-full text-white font-sans relative overflow-hidden">
-      {/* Left Panel */}
-      <div className="bg-[#111] w-[30%] flex flex-col justify-between p-10 relative z-10">
-        {/* Logo */}
-        <div className="text-2xl font-bold tracking-tight">Sneha Interior</div>
+    <section className="flex flex-col lg:flex-row h-auto lg:h-[85vh] w-full text-white font-sans relative overflow-hidden">
+  {/* Left Panel */}
+  <div className="bg-[#111] w-full lg:w-[30%] flex flex-col justify-between p-8 md:p-10 relative z-10">
+    {/* Logo */}
+    <div className="text-xl md:text-2xl font-bold tracking-tight mb-6 lg:mb-0">
+      Sehan Interior
+    </div>
 
-        {/* Centered Content */}
-        <div className="flex flex-col justify-center h-full relative">
-          <h1 className="text-6xl md:text-7xl font-cursive2 leading-tight mb-3 relative z-20 -mr-16">
-            Modern <br />Looking Design
-          </h1>
-          <p className="text-gray-400 max-w-xs mb-8">
-            New home furniture collections and decoration accessories
-          </p>
-          <Link to={'/gallery'}>
-`
-          <button className="group inline-flex items-center cursor-pointer gap-3 px-4 py-3 bg-[#1c1c1c] `rounded-md shadow hover:bg-[#2a2a2a] hover:shadow-lg hover:shadow-black/30 transition">
-            <span className="tracking-wide">See more</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition" />
-          </button>
-          </Link>
-        </div>
+    {/* Centered Content */}
+    <div className="flex flex-col justify-center h-full relative">
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-cursive2 leading-tight mb-3 relative z-20">
+        Modern <br /> Looking Design
+      </h1>
+      <p className="text-gray-400 max-w-xs mb-6 text-sm md:text-base">
+        New home furniture collections and decoration accessories
+      </p>
+      <Link to={"/gallery"}>
+        <button className="group inline-flex items-center cursor-pointer gap-3 px-4 py-2 md:px-6 md:py-3 bg-[#1c1c1c] rounded-md shadow hover:bg-[#2a2a2a] hover:shadow-lg hover:shadow-black/30 transition text-sm md:text-base">
+          <span className="tracking-wide">See more</span>
+          <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition" />
+        </button>
+      </Link>
+    </div>
+  </div>
+
+  {/* Right Panels */}
+  <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+    {/* Panel 1 */}
+    <div className="relative group overflow-hidden">
+      <img
+        src={img1}
+        alt="Aesthetic Wall Design"
+        className="w-full h-60 sm:h-72 md:h-[400px] lg:h-full object-cover transform group-hover:scale-110 transition duration-700"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent group-hover:from-black/30 transition"></div>
+      <div className="absolute bottom-6 left-4 md:left-6">
+        <div className="w-[1px] h-8 md:h-10 bg-white/60 mb-2"></div>
+        <span className="text-xs md:text-sm text-gray-300">01</span>
+        <h3 className="text-lg md:text-2xl font-body mt-1">
+          Aesthetic Wall <br /> Design
+        </h3>
       </div>
+    </div>
 
-      {/* Right Panels */}
-      <div className="flex flex-1">
-        {/* Panel 1 */}
-        <div className="relative w-1/3 group overflow-hidden">
-          <img
-            src={img1}
-            alt="Bacchus kitchen"
-            className="w-full h-[600px] object-cover transform group-hover:scale-110 transition duration-700"
-          />
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent group-hover:from-black/30 group-hover:via-black/10 group-hover:to-transparent transition"></div>
-          
-          {/* Text Overlay */}
-          <div className="absolute bottom-10 left-6 transition-all duration-500 group-hover:translate-y-[-4px]">
-            <div className="w-[1px] h-10 bg-white/60 mb-3"></div>
-            <span className="text-sm text-gray-300">01</span>
-            <h3 className="text-2xl font-body font-serif mt-1">
-              Asthetic Wall <br /> Design
-            </h3>
-          </div>
-        </div>
-
-        {/* Panel 2 */}
-        <div className="relative w-1/3 group overflow-hidden">
-          <img
-            src={img2}
-            alt="Tellus doors"
-            className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-          />
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent group-hover:from-black/30 group-hover:via-black/10 group-hover:to-transparent transition"></div>
-          
-          {/* Text Overlay */}
-          <div className="absolute bottom-10 left-6 transition-all duration-500 group-hover:translate-y-[-4px]">
-            <div className="w-[1px] h-10 bg-white/60 mb-3"></div>
-            <span className="text-sm text-gray-300">02</span>
-            <h3 className="text-2xl font-body font-serif mt-1">
-              Living <br /> Area
-            </h3>
-          </div>
-        </div>
-
-        {/* Panel 3 */}
-        <div className="relative w-1/3 group overflow-hidden">
-          <img
-            src={img3}
-            alt="Helios windows"
-            className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-          />
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent group-hover:from-black/30 group-hover:via-black/10 group-hover:to-transparent transition"></div>
-          
-          {/* Text Overlay */}
-          <div className="absolute bottom-10 left-6 transition-all duration-500 group-hover:translate-y-[-4px]">
-            <div className="w-[1px] h-10 bg-white/60 mb-3"></div>
-            <span className="text-sm text-gray-300">03</span>
-            <h3 className="text-2xl font-body font-serif mt-1">
-              Dining <br />Area
-            </h3>
-          </div>
-        </div>
+    {/* Panel 2 */}
+    <div className="relative group overflow-hidden">
+      <img
+        src={img2}
+        alt="Living Area"
+        className="w-full h-60 sm:h-72 md:h-[400px] lg:h-full object-cover transform group-hover:scale-110 transition duration-700"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent group-hover:from-black/30 transition"></div>
+      <div className="absolute bottom-6 left-4 md:left-6">
+        <div className="w-[1px] h-8 md:h-10 bg-white/60 mb-2"></div>
+        <span className="text-xs md:text-sm text-gray-300">02</span>
+        <h3 className="text-lg md:text-2xl font-body mt-1">
+          Living <br /> Area
+        </h3>
       </div>
-    </section>
+    </div>
+
+    {/* Panel 3 */}
+    <div className="relative group overflow-hidden">
+      <img
+        src={img3}
+        alt="Dining Area"
+        className="w-full h-60 sm:h-72 md:h-[400px] lg:h-full object-cover transform group-hover:scale-110 transition duration-700"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent group-hover:from-black/30 transition"></div>
+      <div className="absolute bottom-6 left-4 md:left-6">
+        <div className="w-[1px] h-8 md:h-10 bg-white/60 mb-2"></div>
+        <span className="text-xs md:text-sm text-gray-300">03</span>
+        <h3 className="text-lg md:text-2xl font-body mt-1">
+          Dining <br /> Area
+        </h3>
+      </div>
+    </div>
+  </div>
+</section>
+
     </>
   );
 };
