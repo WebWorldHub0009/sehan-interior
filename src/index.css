@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400;600&family=Montserrat:wght@300;400;500&display=swap');
+
+.font-cursive1 {
+  font-family: 'Dancing Script', cursive;
+}
+
+.font-cursive2 {
+  font-family: 'Allura', cursive;
+}
+
+.font-body {
+  font-family: 'Montserrat', sans-serif;
+}
