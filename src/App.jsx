@@ -7,6 +7,8 @@ import Footer from "./components/Footer"
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Navbar from "./components/Navbar"
+import Gallery from './pages/Gallery'
+import Services from './pages/Services'
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
 <Route path='/' element={<Home/>}/>
 <Route path='/about' element={<About/>}/>
 <Route path='/contact' element={<Contact/>}/>
+<Route path='/gallery' element={<Gallery/>}/>
+<Route path='/services' element={<Services/>}/>
 
  </Routes>
  <FloatingButtons/>
