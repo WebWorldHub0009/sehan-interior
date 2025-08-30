@@ -1,31 +1,36 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Home from './pages/Home'
 import ScrollToTop from "./components/ScrollToTop"
 import FloatingButtons from './components/FloatingButtons'
 import Footer from "./components/Footer"
-import About from './pages/About'
-import Contact from './pages/Contact'
 import Navbar from "./components/Navbar"
-import Gallery from './pages/Gallery'
-import Services from './pages/Services'
+
+// Lazy-loaded pages
+const Home = lazy(() => import('./pages/Home'))
+const About = lazy(() => import('./pages/About'))
+const Contact = lazy(() => import('./pages/Contact'))
+const Gallery = lazy(() => import('./pages/Gallery'))
+const Services = lazy(() => import('./pages/Services'))
 
 const App = () => {
   return (
- <BrowserRouter>
- <ScrollToTop/>
-<Navbar/>
- <Routes>
-<Route path='/' element={<Home/>}/>
-<Route path='/about' element={<About/>}/>
-<Route path='/contact' element={<Contact/>}/>
-<Route path='/gallery' element={<Gallery/>}/>
-<Route path='/services' element={<Services/>}/>
+    <BrowserRouter>
+      <ScrollToTop />
+      <Navbar />
+      
+      <Suspense fallback={<div className="flex items-center justify-center h-screen text-xl font-body font-bold"></div>}>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/gallery' element={<Gallery />} />
+          <Route path='/services' element={<Services />} />
+        </Routes>
+      </Suspense>
 
- </Routes>
- <FloatingButtons/>
- <Footer/>
- </BrowserRouter>
+      <FloatingButtons />
+      <Footer />
+    </BrowserRouter>
   )
 }
 
