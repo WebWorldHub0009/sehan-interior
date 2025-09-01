@@ -12,13 +12,19 @@ import "swiper/css/pagination";
 import building from "../assets/images/home/h3.jpg";
 
 const services = [
-  { title: "Modular Kitchen", slug: "constructions", image: building },
-  { title: "Living Room", slug: "architectural", image: building },
-  { title: "Bedroom Design", slug: "interior-design", image: building },
-  { title: "RoofTop Corner Design", slug: "exterior-design", image: building },
-  { title: "Wall Molding Design", slug: "contractor", image: building },
-  { title: "Gypsum Board Design", slug: "property-sale-purchase", image: building },
-  { title: "Pvc Panel Design", slug: "real-estate-service", image: building },
+  { title: "Modular Kitchen", slug: "modular-kitchen",image:building },
+  { title: "Living Room Design", slug: "living-room",image:building  },
+  { title: "Bedroom Design", slug: "bedroom-design" ,image:building },
+  { title: "Rooftop Corner Design", slug: "rooftop-design" ,image:building },
+  { title: "Wall Molding Design", slug: "wall-molding",image:building  },
+  { title: "Gypsum Board Design", slug: "gypsum-board",image:building  },
+  { title: "PVC Panel Design", slug: "pvc-panel" ,image:building },
+  { title: "Modern Carpentry", slug: "modern-carpentry",image:building  },
+  { title: "False Ceiling Design", slug: "false-ceiling",image:building  },
+  { title: "Wardrobe Design", slug: "wardrobe-design",image:building  },
+  { title: "Office Interior", slug: "office-interior",image:building  },
+  { title: "Hotel & Restaurant Interiors", slug: "hotel-restaurant-interiors",image:building  },
+  { title: "Commercial Space Design", slug: "commercial-space-design",image:building  },
 ];
 
 export default function ServicesSection() {

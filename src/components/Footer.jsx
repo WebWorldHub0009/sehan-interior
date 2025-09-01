@@ -39,8 +39,8 @@ const services = [
   { title: "False Ceiling Design", slug: "false-ceiling" },
   { title: "Wardrobe Design", slug: "wardrobe-design" },
   { title: "Office Interior", slug: "office-interior" },
-  { title: "Hotel & Restaurant Interiors", slug: "hospitality-interior" },
-  { title: "Commercial Space Design", slug: "commercial-interior" },
+  { title: "Hotel & Restaurant Interiors", slug: "hotel-restaurant-interiors" },
+  { title: "Commercial Space Design", slug: "commercial-space-design" },
 ];
 
 export default function Footer() {
