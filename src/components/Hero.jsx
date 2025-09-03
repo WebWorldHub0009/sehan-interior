@@ -1,5 +1,5 @@
 // src/components/HeroSection.jsx
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiSearch } from "react-icons/fi";
 import baseImage from "../assets/images/home/bh5.jpg";
@@ -45,11 +45,8 @@ const slides = [
   },
 ];
 
-const AUTO_SPEED_MS = 4000;
-
 const HeroSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
   // 🔍 Search states
@@ -59,22 +56,11 @@ const HeroSection = () => {
   const activeSlide = slides[activeIndex];
   const bgKey = useMemo(() => `bg-${activeIndex}`, [activeIndex]);
 
-  // Preload next image
-  useEffect(() => {
-    const nextIndex = (activeIndex + 1) % slides.length;
-    const img = new Image();
-    img.src = slides[nextIndex].img;
-  }, [activeIndex]);
-
-  // Auto-slide
-  useEffect(() => {
-    if (paused) return;
-    const t = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % slides.length);
-      setLoaded(false);
-    }, AUTO_SPEED_MS);
-    return () => clearInterval(t);
-  }, [paused]);
+  // Manual slide change
+  const handleSlideClick = (i) => {
+    setActiveIndex(i);
+    setLoaded(false);
+  };
 
   // Handle search input
   const handleSearchChange = (e) => {
@@ -118,9 +104,9 @@ const HeroSection = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={bgKey}
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.05 }}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -50 }}
             transition={{ duration: 0.9, ease: "easeInOut" }}
             className="absolute inset-0 bg-cover bg-center"
             style={{
@@ -133,8 +119,13 @@ const HeroSection = () => {
             )}
             <img
               src={activeSlide.img}
+              srcSet={`
+                ${activeSlide.img} 600w,
+                ${activeSlide.img} 1200w
+              `}
+              sizes="(max-width: 768px) 100vw, 50vw"
               alt={activeSlide.title}
-              loading="lazy"
+              loading="eager" // ✅ instantly load hero image
               onLoad={() => setLoaded(true)}
               className="hidden"
             />
@@ -144,11 +135,7 @@ const HeroSection = () => {
       </div>
 
       {/* LEFT SLIDE LIST (desktop only) */}
-      <div
-        className="absolute top-0 left-0 h-full text-gray-400 w-1/3 bg-black/60 hidden lg:block"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-      >
+      <div className="absolute top-0 left-0 h-full text-gray-400 w-1/3 bg-black/60 hidden lg:block">
         <div className="h-full w-full flex items-center pl-6 md:pl-16 pr-6 py-8">
           <div className="relative w-full max-w-sm">
             <ul className="space-y-6">
@@ -158,7 +145,7 @@ const HeroSection = () => {
                   <li
                     key={slide.id}
                     className="relative cursor-pointer"
-                    onClick={() => setActiveIndex(i)}
+                    onClick={() => handleSlideClick(i)}
                   >
                     {isActive && (
                       <span className="absolute -left-6 top-0  bottom-0 w-1 rounded bg-gradient-to-b from-[#D4AF37] to-[#D4AF37]" />
@@ -232,7 +219,8 @@ const HeroSection = () => {
                     setQuery("");
                   }}
                 >
-                  {s.rightTitle} — <span className="opacity-70">{s.subtitle}</span>
+                  {s.rightTitle} —{" "}
+                  <span className="opacity-70">{s.subtitle}</span>
                 </li>
               ))}
             </ul>
@@ -246,7 +234,7 @@ const HeroSection = () => {
           {slides.map((slide, i) => (
             <button
               key={slide.id}
-              onClick={() => setActiveIndex(i)}
+              onClick={() => handleSlideClick(i)}
               className={`flex-shrink-0 px-4 py-2 rounded-full text-xs sm:text-sm transition ${
                 i === activeIndex
                   ? "bg-yellow-400 text-black font-semibold shadow-lg"

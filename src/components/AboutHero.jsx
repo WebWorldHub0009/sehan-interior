@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import img1 from "../assets/images/home/h3.jpg";
+import img1 from "../assets/images/about/Asehan.jpg";
 
 const slides = [
   {

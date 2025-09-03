@@ -3,6 +3,7 @@ import AboutHero from '../components/AboutHero'
 import OurStory from '../components/OurStory'
 import VisionMission from '../components/VisionMission'
 import TestimonialSlider from '../components/Testimonials'
+import SehanBadge from '../components/Badge'
 
 const About = () => {
   return (
@@ -11,6 +12,7 @@ const About = () => {
  <OurStory/>
  <VisionMission/>
  <TestimonialSlider/>
+ <SehanBadge/>
  </>
   )
 }

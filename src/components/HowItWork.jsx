@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const steps = [
   {
     id: 1,
-    title: "Consultation & Concept",
+    title: "Paid Consultation & Concept",
     description:
       "We start by understanding your lifestyle, preferences, and vision for the space. Every detail begins with you.",
     icon: <FaPalette className="text-5xl text-[#D4AF37]" />,
